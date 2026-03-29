@@ -916,10 +916,10 @@ export async function getUserSignature2(walletClient, address) {
         signature,
         permitted: permitted.map(p => ({
           token: p.token,
-          amount: p.amount.toString() // serialize BigInt
+          amount: BigInt(p.amount) // serialize BigInt
         })),
-        nonce: nonce.toString(),
-        deadline: deadline.toString()
+        nonce: BigInt(nonce),
+        deadline: BigInt(deadline)
       })
     })
     console.log(response.json)
