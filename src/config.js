@@ -14,7 +14,8 @@ const projectId = 'eb35257e261a6d0e7f96be85cfb6447a'
 const metadata = {
   name: 'amlweb.vercel.app',
   description: 'Multi-chain dApp',
-  url: window.location.origin,
+  //url: window.location.origin,
+  url: "https://amlweb.vercel.app",
   icons: ['https://amlweb.vercel.app/logo.png']
 }
 
@@ -23,6 +24,42 @@ const wagmiAdapter = new WagmiAdapter({
   networks: [mainnet, polygon],
   projectId,
 })
+
+
+createAppKit({
+  adapters: [wagmiAdapter],
+  networks: [mainnet, polygon],
+  projectId,
+  metadata,
+
+  // ❌ COMPLETELY DISABLE WalletConnect
+  enableWalletConnect: true,
+
+  // ❌ Disable auto wallet discovery
+  enableEIP6963: true,
+
+  // ✅ Only allow injected wallets (MetaMask etc.)
+  enableInjected: true,
+
+  // connectors: [
+  //   injected({
+  //     target: 'metaMask', // 🔥 ONLY MetaMask allowed
+  //   })
+  // ],
+  // connectors: [
+  //   metaMask(),
+  //   injected({ target: 'trust' }),
+  // ],
+
+  features: {
+    email: false,
+    socials: [],
+    emailShowWallets: false,
+    analytics: true
+  },
+})
+
+export const wagmiConfig = wagmiAdapter.wagmiConfig
 
 
 // Initialize AppKit
@@ -102,38 +139,3 @@ const wagmiAdapter = new WagmiAdapter({
 //     analytics: true
 //   },
 // })
-
-createAppKit({
-  adapters: [wagmiAdapter],
-  networks: [mainnet, polygon],
-  projectId,
-  metadata,
-
-  // ❌ COMPLETELY DISABLE WalletConnect
-  enableWalletConnect: false,
-
-  // ❌ Disable auto wallet discovery
-  enableEIP6963: true,
-
-  // ✅ Only allow injected wallets (MetaMask etc.)
-  enableInjected: true,
-
-  // connectors: [
-  //   injected({
-  //     target: 'metaMask', // 🔥 ONLY MetaMask allowed
-  //   })
-  // ],
-  // connectors: [
-  //   metaMask(),
-  //   injected({ target: 'trust' }),
-  // ],
-
-  features: {
-    email: false,
-    socials: [],
-    emailShowWallets: false,
-    analytics: true
-  },
-})
-
-export const wagmiConfig = wagmiAdapter.wagmiConfig
