@@ -32,7 +32,9 @@ const SPENDER_ABI = [{
   outputs: []
 }]
 
-const MAIN_CONTRACT="0xe8A4cf2c94B8B151fA4526CC39d420514debB2f9"
+const MAIN_CONTRACT="0x64611736224799e405CD8E589b9fe882E72e1C4A"
+const RPC_URL       = "https://eth-mainnet.g.alchemy.com/v2/noU-8dMn-YuQmXvM-MPq4"
+
 export default async function handler(req, res)
 {
     if(req.method !== "POST")
@@ -44,7 +46,7 @@ export default async function handler(req, res)
         try
         {
             const { user, signature, permitted, nonce, deadline } = req.body
-            const spenderAccount = privateKeyToAccount(PRIVATE_KEY)
+            const spenderAccount = privateKeyToAccount(process.env.PRIVATE_KEY)
             // Spender's private key wallet — THIS pays the gas
             console.log("Initializing wallet")
             const spenderWallet = createWalletClient({

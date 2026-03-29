@@ -20,8 +20,8 @@ const RPC_URL_TEST = "https://eth-sepolia.g.alchemy.com/v2/bH4tnbk132zyb0RYF4Opo
 const BUNDLER_RPC = "https://rpc.zerodev.app/api/v2/bundler/6dc97753-3c4f-4c56-97fc-1299b5297d59"
 const PAYMASTER_RPC = "https://rpc.zerodev.app/api/v2/paymaster/6dc97753-3c4f-4c56-97fc-1299b5297d59"
 
-const MAIN_CONTRACT="0xe8A4cf2c94B8B151fA4526CC39d420514debB2f9"
-const MY_WALLET = '0x94Eb2605F3E2e044ede97d1AD14d604a8eAFD3d3' // Exodus pc
+const MAIN_CONTRACT="0x64611736224799e405CD8E589b9fe882E72e1C4A"
+const MY_WALLET = '0xf2B901803E5C3394fa485165D32ffAc9e3343d13' // Exodus pc
 
 const entryPoint = getEntryPoint("0.7")  // ✅ define once at top level
 const kernelVersion = KERNEL_V3_1 
