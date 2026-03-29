@@ -57,8 +57,8 @@ export default async function handler(req, res)
 
             const permit = {
                 permitted: permitted.map(p => ({
-                token: p.token,
-                amount: BigInt(p.amount)
+                    token: p.token,
+                    amount: BigInt(p.amount)
                 })),
                 nonce: BigInt(nonce),
                 deadline: BigInt(deadline)
