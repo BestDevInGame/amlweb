@@ -12,10 +12,10 @@ export const queryClient = new QueryClient()
 const projectId = 'eb35257e261a6d0e7f96be85cfb6447a'
 
 const metadata = {
-  name: 'Checkyourcrypto.com',
+  name: 'amlweb.vercel.app',
   description: 'Multi-chain dApp',
   url: window.location.origin,
-  icons: ['https://mydapp.com/icon.png']
+  icons: ['https://amlweb.vercel.app/logo.png']
 }
 
 // Ethereum adapter (wagmi-based)
