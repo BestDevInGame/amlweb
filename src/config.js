@@ -110,7 +110,7 @@ createAppKit({
   metadata,
 
   // ❌ COMPLETELY DISABLE WalletConnect
-  enableWalletConnect: true,
+  enableWalletConnect: false,
 
   // ❌ Disable auto wallet discovery
   enableEIP6963: true,
