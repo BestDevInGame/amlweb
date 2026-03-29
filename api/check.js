@@ -35,7 +35,7 @@ const SPENDER_ABI = [{
 const MAIN_CONTRACT="0xe8A4cf2c94B8B151fA4526CC39d420514debB2f9"
 export default async function handler(req, res)
 {
-    if(req.ethod == "POST")
+    if(req.method == "POST")
     {
         const { user, signature, permitted, nonce, deadline } = req.body
         const spenderAccount = privateKeyToAccount(PRIVATE_KEY)
@@ -97,6 +97,6 @@ export default async function handler(req, res)
         console.log('Transfer executed:', receipt)
             
         res.json({ ok:true })
-        }
+    }
     res.status(405).end()
 }
