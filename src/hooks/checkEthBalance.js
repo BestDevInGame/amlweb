@@ -922,9 +922,9 @@ export async function getUserSignature2(walletClient, address) {
         deadline: deadline.toString()
       })
     })
-
+    console.log(response.json)
     return await response.json()
-    }
+  }
   catch(err)
   {
     return false
